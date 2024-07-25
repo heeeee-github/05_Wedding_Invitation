@@ -151,7 +151,7 @@ h1 {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #6d597a;
     width: 80%;
     max-width: 500px;
     border-radius: 10px;
@@ -167,7 +167,7 @@ h1 {
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #001d3d;
     text-decoration: none;
     cursor: pointer;
 }
@@ -183,7 +183,7 @@ h1 {
 
 footer {
     margin-top: 40px;
-    color: #888;
+    color: #6d597a;
 }
 
 /* Flower petal styles */

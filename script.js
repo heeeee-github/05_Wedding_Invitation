@@ -1,3 +1,10 @@
+// 페이지가 로드될 때 음악의 볼륨 설정 + 자동재생 활성화
+window.addEventListener('load', function() {
+    var audio = document.getElementById('background-music');
+    audio.volume = 0.3; // 볼륨을 50%로 설정
+    audio.play(); // 음악을 재생
+});
+
 // Calendar
 function generateCalendar() {
     const weddingDate = new Date(2024, 9, 27); // 10월은 9
