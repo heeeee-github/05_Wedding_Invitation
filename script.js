@@ -142,3 +142,29 @@ document.addEventListener('DOMContentLoaded', () => {
     setupModal();
     createFlowerPetals();
 });
+
+
+// 마우스 오른쪽 버튼 클릭 방지
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// 키보드의 특정 키 조합 방지 (PrintScreen, Ctrl+P, Ctrl+S 등)
+document.addEventListener('keydown', function(e) {
+    // PrintScreen 키 방지
+    if (e.key === 'PrintScreen') {
+        alert('캡처는 금지되어 있습니다.');
+        return false;
+    }
+
+    // Ctrl+P (인쇄), Ctrl+S (저장) 등 방지
+    if ((e.ctrlKey && e.key === 'p') || (e.ctrlKey && e.key === 's')) {
+        alert('이 기능은 금지되어 있습니다.');
+        e.preventDefault();
+    }
+});
+
+// // 드래그 방지
+// document.addEventListener('dragstart', function(e) {
+//     e.preventDefault();
+// });
