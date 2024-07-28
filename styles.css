@@ -61,7 +61,7 @@ h1 {
 }
 
 .main-image:hover {
-    transform: scale(1.5);
+    transform: scale(1.15);
 }
 
 .gallery-image {
