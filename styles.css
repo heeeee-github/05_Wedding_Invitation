@@ -85,6 +85,10 @@ h1 {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
+.section h3 span {
+    color: var(--primary-hover);
+}
+
 /* Buttons */
 .copy-address-btn , .contact-list a , .copy-account-btn {
     display: inline-block;
