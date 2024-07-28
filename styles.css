@@ -1,12 +1,24 @@
+/* clean codeing + refactorying */
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700&display=swap');
-        
+
+:root {
+    --primary-color: #ffe6e3;
+    --primary-hover: #f28482;
+    --text-color: #001223;
+    --secondary-color: #6d597a;
+    --background-color: #f9f7f5; /*#f9f7f5*/
+    --white: #ffffff;
+}
+
+/* Global Styles */
 body {
     font-family: 'Noto Serif KR', serif;
     line-height: 1.8;
-    color: #333;
+    color: var(--text-color);
     margin: 0;
     padding: 0;
-    background-color: #f9f7f5;
+    background-color: var(--background-color);
     text-align: center;
 }
 
@@ -14,16 +26,26 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 20px;
+    position: relative;
+    z-index: 1;
 }
 
+/* Typography */
 h1, h2, h3 {
-    color: #3a3a3a;
+    color: var(--text-color);
     margin-bottom: 20px;
 }
 
 h1 {
     font-size: 2.5em;
     margin-bottom: 40px;
+}
+
+/* Images */
+.inline-image {
+    vertical-align: middle;
+    height: 20px;
+    margin: 0 0 5px 0;
 }
 
 .main-image {
@@ -40,30 +62,117 @@ h1 {
     transform: scale(1.02);
 }
 
+.gallery-image {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 1.0s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(2.0);
+}
+
+/* Sections */
 .section {
-    background-color: white;
+    background-color: var(--white);
     border-radius: 10px;
     padding: 40px;
     margin-bottom: 40px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.btn {
+/* Buttons */
+.copy-address-btn , .contact-list a , .copy-account-btn {
     display: inline-block;
-    padding: 12px 24px;
-    background-color: #f5cac3;
-    color: white;
+    padding: 3px 7px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     text-decoration: none;
+    border: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-size: 1em;
-    margin: 10px;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #f5cac3;
+
+.btn_naver {
+    display: inline-block;
+    padding: 3px 7px;
+    background-color: #03c75a;
+    color: var(--text-color);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+.btn_kakao {
+    display: inline-block;
+    padding: 3px 7px;
+    background-color: #fae100;
+    color: var(--text-color);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn_T {
+    display: inline-block;
+    padding: 3px 7px;
+    background-color: #6100ff;
+    color: var(--white);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover, .copy-btn:hover, #contactBtn:hover, .contact-list a:hover {
+    background-color: var(--primary-hover);
+    color: var(--white);
+}
+
+#contactBtn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#contactBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-icon {
+    vertical-align: middle;
+    height: 20px;
+    margin-right: 8px;
+}
+
+/* Calendar */
 #calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -78,12 +187,12 @@ h1 {
     justify-content: center;
     border: 1px solid #e0e0e0;
     border-radius: 50%;
-    font-size: 1.0em;
+    font-size: 0.9em;
 }
 
 .calendar-day.wedding-day {
-    background-color: #f28482;
-    color: white;
+    background-color: var(--primary-hover);
+    color: var(--white);
     font-weight: bold;
 }
 
@@ -91,54 +200,22 @@ h1 {
     font-size: 2.0em;
     font-weight: bold;
     margin-top: 20px;
-    color: #f28482;
+    color: var(--primary-hover);
 }
 
+/* Gallery */
 #galleryImages {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
 }
 
-.gallery-image {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 5px;
-    transition: transform 1.0s ease;
-}
-
-.gallery-image:hover {
-    transform: scale(2.0);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.3s ease-out;
-}
-
-.copy-btn {
-    background-color: #f0f0f0;
-    border: none;
-    padding: 5px 10px;
-    margin-left: 10px;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-.copy-btn:hover {
-    background-color: #e0e0e0;
-}
-
+/* Modal */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     left: 0;
     top: 0;
     width: 100%;
@@ -148,17 +225,19 @@ h1 {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: var(--white);
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #6d597a;
+    border: 1px solid var(--secondary-color);
     width: 80%;
-    max-width: 500px;
+    max-width: 300px;
     border-radius: 10px;
+    font-family: 'Noto Serif KR', serif;
+    color: var(--text-color);
 }
 
 .close {
-    color: #f5cac3;
+    color: var(--primary-color);
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -167,26 +246,73 @@ h1 {
 
 .close:hover,
 .close:focus {
-    color: #001d3d;
-    text-decoration: none;
-    cursor: pointer;
+    color: var(--text-color);
 }
 
+/* Contact List */
 .contact-list {
     list-style-type: none;
     padding: 0;
 }
+.contact-list h3{
+    text-align: left;
+}
+
 
 .contact-list li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+
+.contact-link:hover {
+    background-color: #f28482;
+}
+
+/* Accounting Section */
+#accounting h3 {
+    color: var(--text-color);
+    font-size: 1.3em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+#accounting .account-info {
+    font-weight: 300;
+}
+
+#accounting li {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#accounting li span {
+    padding: 0 30px 0 0 ;
+}
+
+/* Footer */
 footer {
     margin-top: 40px;
-    color: #6d597a;
+    color: var(--secondary-color);
 }
 
-/* Flower petal styles */
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Flower Petals */
 #flower-container {
     position: fixed;
     top: 0;
@@ -199,7 +325,7 @@ footer {
 
 .flower-petal {
     position: absolute;
-    background-image: url('./img/petal.jpg'); /* Make sure to add this image to your project */
+    background-image: url('./img/petal.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     width: 20px;
@@ -209,16 +335,6 @@ footer {
 }
 
 @keyframes falling {
-    0% {
-        transform: translate(0, -10vh) rotate(0deg);
-    }
-    100% {
-        transform: translate(20vw, 110vh) rotate(720deg);
-    }
-}
-
-/* Ensure other content is above the petals */
-.container {
-    position: relative;
-    z-index: 1;
+    0% { transform: translate(0, -10vh) rotate(0deg); }
+    100% { transform: translate(20vw, 110vh) rotate(720deg); }
 }

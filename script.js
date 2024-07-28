@@ -1,7 +1,7 @@
 // 페이지가 로드될 때 음악의 볼륨 설정 + 자동재생 활성화
 window.addEventListener('load', function() {
     var audio = document.getElementById('background-music');
-    audio.volume = 0.3; // 볼륨을 50%로 설정
+    audio.volume = 0.3; // 볼륨 설정( 0 ~ 1 )
     audio.play(); // 음악을 재생
 });
 
@@ -50,7 +50,7 @@ function updateDday() {
     
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     
-    document.getElementById('dday').textContent = `D-${days}`;
+    document.getElementById('dday').textContent = `D - ${days}일`;
 }
 
 // Gallery
